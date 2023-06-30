@@ -1,0 +1,56 @@
+OBJECTID                        int64
+ID                              int64
+NIC                           float64
+SUBJETIVIDADE                  object
+SUBJETIVIDADE_COMPLEMENTAR     object
+INSTRUMENTO_UTILIZADO          object
+DATA_HORA_FATO                 object
+ANO_FATO                        int64
+MES_FATO                        int64
+MES_FATO_TEXTO                 object
+DIA_FATO                        int64
+DIA_SEMANA_FATO                object
+HORA_FATO                       int64
+TURNO                          object
+CIDADE_FATO                    object
+BAIRRO_FATO                    object
+RISP                           object
+AISP                           object
+ENDERECO_FATO                  object
+PT_REF_FATO                    object
+LOCAL_FATO                     object
+NOME_VITIMA                    object
+ALCUNHA_VITIMA                 object
+MAE_VITIMA                     object
+IDADE_VITIMA                  float64
+COR_RACA_VITIMA                object
+SEXO_VITIMA                    object
+OCUPACAO_VITIMA                object
+ESCOLARIDADE_VITIMA            object
+ESTADO_CIVIL_VITIMA            object
+AFINIDADE_AGRESSOR             object
+LINK_SITE                      object
+SITUACAO_ESPECIAL              object
+LONGITUDE                     float64
+LATITUDE                      float64
+FORMATO                        object
+DIA_SEMANA_FATO_NUM             int64
+dtype: object
+
+# Categórico
+agrupado = dataset.groupby(['INSTRUMENTO_UTILIZADO']).size()
+agrupado
+# Gráfico
+agrupado.plot.bar(color = 'gray')
+
+# Numérico
+dataset['NIC'].describe()
+
+# Gráficos
+srn.boxplot(dataset['NIC']).set_title('NIC')
+srn.histplot(dataset['NIC'], kde=True).set_title('NIC')
+srn.kdeplot(dataset['ANO_FATO']).set_title('NIC')
+
+
+IDADE_VITIMA
+
